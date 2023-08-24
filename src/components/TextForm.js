@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 
 export default function TextForm(props) {
+  const handleExtraSpaces = () => {
+    let newText = text.split(/[ ]+/); //regex => agar ek ya ek se zada spaces hongi toh usko split krke array bana lega
+    setText(newText.join(" "));
+  };
   const handleCopy = () => {
     let text = document.getElementById("myBox");
     text.select(); //used to select whole text
@@ -50,6 +54,9 @@ export default function TextForm(props) {
         </button>
         <button className="btn btn-primary mx-1" onClick={handleCopy}>
           Copy
+        </button>
+        <button className="btn btn-primary mx-1" onClick={handleExtraSpaces}>
+          Remove Extra Spaces
         </button>
       </div>
       <div className="container my-3">
