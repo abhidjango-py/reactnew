@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 
 export default function TextForm(props) {
+  const handleCopy = () => {
+    let text = document.getElementById("myBox");
+    text.select(); //used to select whole text
+    navigator.clipboard.writeText(text.value); //goes to clipboard and write text value
+  };
   const handleUpClick = () => {
     console.log("Uppercase was clicked" + text);
     let newText = text.toUpperCase();
@@ -42,6 +47,9 @@ export default function TextForm(props) {
         </button>
         <button className="btn btn-primary mx-1" onClick={handleClClick}>
           Clear
+        </button>
+        <button className="btn btn-primary mx-1" onClick={handleCopy}>
+          Copy
         </button>
       </div>
       <div className="container my-3">
