@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import PropTypes from "prop-types";
 export default function TextForm(props) {
   const handleExtraSpaces = () => {
     let newText = text.split(/[ ]+/); //regex => agar ek ya ek se zada spaces hongi toh usko split krke array bana lega
@@ -36,7 +36,9 @@ export default function TextForm(props) {
         <h1>{props.heading}</h1>
         <div className="mb-3">
           <textarea
-            className="form-control"
+            className={`form-control bg-${props.mode} text-${
+              props.mode === "light" ? "dark" : "light"
+            }`}
             id="myBox"
             value={text}
             rows="8"
