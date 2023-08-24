@@ -4,7 +4,7 @@ export default function NavBar(props) {
   return (
     <div>
       <nav
-        className="navbar navbar-expand-lg bg-body-tertiary "
+        className="navbar navbar-expand-lg bg-body-tertiary mb-4"
         data-bs-theme="dark"
       >
         <div className="container-fluid">
