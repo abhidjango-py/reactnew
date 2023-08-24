@@ -7,13 +7,18 @@ export default function TextForm(props) {
     setText(newText);
   };
   const handleLoClick = () => {
-    console.log("Uppercase was clicked" + text);
+    console.log("Lowercase was clicked" + text);
     let newText = text.toLowerCase();
     setText(newText);
   };
   const handleOnChange = (event) => {
     console.log("onchange");
     setText(event.target.value); //sets value or key you press
+  };
+  const handleClClick = (event) => {
+    console.log("Clear was clicked" + text);
+    let newText = "";
+    setText(newText);
   };
   const [text, setText] = useState("Enter text here... ");
   return (
@@ -34,6 +39,9 @@ export default function TextForm(props) {
         </button>
         <button className="btn btn-primary mx-1" onClick={handleLoClick}>
           Convert to Lowecase
+        </button>
+        <button className="btn btn-primary mx-1" onClick={handleClClick}>
+          Clear
         </button>
       </div>
       <div className="container my-3">
