@@ -37,16 +37,17 @@ function App() {
   };
   return (
     <>
-      <NavBar
-        title="TextUtils"
-        aboutText="About Us"
-        mode={mode}
-        toggleMode={toggleMode}
-      />
-      <Alert alert={alert} />
       <BrowserRouter>
+        <NavBar
+          title="TextUtils"
+          aboutText="About Us"
+          mode={mode}
+          toggleMode={toggleMode}
+        />
+        <Alert alert={alert} />
         <Routes>
           <Route
+            exact
             path="/"
             element={
               <TextForm
@@ -56,7 +57,7 @@ function App() {
               />
             }
           />
-          <Route path="/about" element={<About />} />
+          <Route exact path="/about" element={<About />} />
         </Routes>
       </BrowserRouter>
     </>
